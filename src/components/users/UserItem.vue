@@ -1,19 +1,19 @@
 <template>
   <li>
-    <h3>{{ name }}</h3>
-    <div class="role" :class="roleClass">{{ role }}</div>
+    <h3>{{ user.fullName }}</h3>
+    <div class="role" :class="roleClass">{{ user.role }}</div>
   </li>
 </template>
 
 <script>
 export default {
-  props: ['name', 'role'],
+  props: ['user'],
   computed: {
     roleClass() {
-      if (this.role === 'Engineer') {
+      if (this.user.role === 'Engineer') {
         return 'role--engineer';
       }
-      if (this.role === 'Consultant') {
+      if (this.user.role === 'Consultant') {
         return 'role--consultant';
       }
       return null;
